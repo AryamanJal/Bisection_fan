@@ -21,13 +21,16 @@ my $n = $ff->MAXIMAL_CONES->rows;
 
 my @A = [];
 my @V = [];
-my $z_one = ones_vector($p->DIM);
+
 my @z = [];
 
 for (my $i =0; $i <$n; $i ++){
+    my $z_one = ones_vector($ff->cone($i)->N_RAYS);
+    $z_one = new Matrix($z_one);
     @A[$i] = -$ff->cone($i)->FACETS;
     @V[$i] = $ff->cone($i)->RAYS;
-    @z[$i] = $z_one*inv($V[$i]);
+    @z[$i] = solve_left(transpose($V[$i]), $z_one); 
+#     $z_one*inv($V[$i]);
     $z[$i] = new Matrix($z[$i]);
 
 }
@@ -158,16 +161,16 @@ foreach my $i (@s1){
     
 }
 
-my @p1 = [];
-for (my $i =0; $i <$F3->rows; $i ++){
-    my $M1 = new Matrix($F3->row($i));
-    my $M2 = new Matrix(-$F3->row($i));
-    $M1 = $M1/$M2;
-    $p1[$i] = new Polytope(INEQUALITIES=>$M1);  
-    }
+# my @p1 = [];
+# for (my $i =0; $i <$F3->rows; $i ++){
+#     my $M1 = new Matrix($F3->row($i));
+#     my $M2 = new Matrix(-$F3->row($i));
+#     $M1 = $M1/$M2;
+#     $p1[$i] = new Polytope(INEQUALITIES=>$M1);  
+#     }
 
 
-push(@G, @p1);
+# push(@G, @p1);
 # compose(map{$_->VISUAL(VertexLabels=>'hidden')}@p1);
 
 #print join "  ",@G;
@@ -182,6 +185,8 @@ push(@G, @p1);
 # print($I[1][2]->AMBIENT_DIM, "\n", cross(3)->AMBIENT_DIM);
 # $pp= intersection(cross(3), $I[1][2]);
 compose(map{$_->VISUAL(VertexLabels=>'hidden')}@G);
+
+# tikz(compose(map{$_->VISUAL(VertexLabels=>'hidden')}@G), File=>"bisfan");
 
 # compose($I[0][1]->VISUAL, $I[7][0]->VISUAL);
 # print scalar(@G);
