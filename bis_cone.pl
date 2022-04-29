@@ -27,9 +27,9 @@ my @z = [];
 for (my $i =0; $i <$n; $i ++){
     my $z_one = ones_vector($ff->cone($i)->N_RAYS);
     $z_one = new Matrix($z_one);
-    @A[$i] = -$ff->cone($i)->FACETS;
-    @V[$i] = $ff->cone($i)->RAYS;
-    @z[$i] = solve_left(transpose($V[$i]), $z_one); 
+    $A[$i] = -$ff->cone($i)->FACETS;
+    $V[$i] = $ff->cone($i)->RAYS;
+    $z[$i] = solve_left(transpose($V[$i]), $z_one); 
 #     $z_one*inv($V[$i]);
     $z[$i] = new Matrix($z[$i]);
 
