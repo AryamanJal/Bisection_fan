@@ -6,7 +6,7 @@ Install polymake on your machine as detailed [here](https://polymake.org/doku.ph
 
 ### Ways of executing the polymake code
 First clone the repository into a directory called `bis_fan`. You then have two choices:
-1) Executing from the terminal:  `cd` into `bis_fan` and open polymake with `polymake`. Choose your favourite $2$ or $3$-dimensional, centrally symmetric polytope $P$ and save it to some variable `$p`. Then type 
+1) Executing from the terminal:  `cd` into `bis_fan` and open polymake with `polymake`. Choose your favourite $2$ or $3$-dimensional, centrally symmetric polytope $P$ and save it to some variable `$p`. Then in polymake run
 ```
 open(my $f, ">", "vertices.txt"); print $f $p->VERTICES; close($f);
 
