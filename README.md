@@ -12,7 +12,7 @@ open(my $f, ">", "vertices.txt"); print $f $p->VERTICES; close($f);
 
 ```
 
-This writes the vertices of $P$ to `vertices.txt`. Now run `script("bis_cone2.pl")`. If everything has been installed correctly, a browser window should open up containing the collection of bisection cones all visualised at once.
+This writes the vertices of $P$ to `vertices.txt`. Now run `script("bis_cone2.pl")`. If everything has been installed correctly, a browser window should open up containing the collection of bisection cones all visualised at once. The bisection fan of the octahedron for example will look like the image below.
 
-2) Execute from the Jupyter notebook: Initial cells contain a few of the main objects that you can play around with/ visualise. Write the vertices of your $P$ to the `vertices.txt` file by finding and executing the cell containing the open command above. Then execute the cell with `script("bis_cone2.pl")` to see the visualisation within the notebook itself.
+2) Execute from the Jupyter notebook: Instructions in the `Visualising bisection fan.ipynb` are self-explanatory.
 
