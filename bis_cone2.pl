@@ -3,7 +3,7 @@ use strict;
 use warnings;
 
 
-open(INPUT, "<", "/home/aryaman/polymake_notebooks/vertices.txt");
+open(INPUT, "<", "/home/aryaman/bisection_fan_2022/vertices.txt");
 my $B = new Matrix<Rational>(<INPUT>);
 close(INPUT);
 
@@ -192,6 +192,7 @@ foreach my $i (@s1){
 
 # print($I[1][2]->AMBIENT_DIM, "\n", cross(3)->AMBIENT_DIM);
 # $pp= intersection(cross(3), $I[1][2]);
+
 compose(map{$_->VISUAL(VertexLabels=>'hidden')}@G);
 
 # tikz(compose(map{$_->VISUAL(VertexLabels=>'hidden')}@G), File=>"bisfan");
