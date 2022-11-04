@@ -5,6 +5,13 @@ This repo contains a Jupyter notebook and execute polymake code (the .pl files) 
 Install polymake on your machine as detailed [here](https://polymake.org/doku.php/download/start). If you're using a Windows machine, the best way to install it is to do so on WSL2. Instructions are [here](https://docs.google.com/document/d/1pJm5Shye_7nwL4tEx695frccYMfbXHYSpKEHJ_HHEt0/edit). To be able to run Jupyter notebook containing polymake commands, add the polymake kernel to your Jupyter set-up as outlined [here](https://polymake.org/doku.php/user_guide/howto/jupyter).
 
 ### Ways of executing the polymake code
-First clone the repository into a directory of your choice. You then have two choices:
-1) Executing from the terminal:  `cd` into the directory you cloned into and and open polymake with `polymake`. Run `script(bis_cone2)`
-The Visualising bisection fan Jupyter notebook contains some snippets, examples and rough work of polymake code.  The file bis_cone.pl can be run from the command line (after opening polymake) as script("some folder/bis_cone.pl"); where you need to replace some folder with the location where bis_cone.pl was downloaded. e.g. /Dell/Downloads/bis_cone.pl and so on. The bis_cone1.txt contains the same content as bis_cone but is a text file.
+First clone the repository into a directory called `bis_fan`. You then have two choices:
+1) Executing from the terminal:  `cd` into `bis_fan` and open polymake with `polymake`. Choose your favourite $2$ or $3$-dimensional, centrally symmetric polytope $P$ and save it to some variable `$p`. Then type 
+```
+open(my $f, ">", "vertices.txt"); print $f $p->VERTICES; close($f);
+
+```
+
+This writes the vertices of $P$ to `vertices.txt`. Now run `script("bis_cone2.pl")`. If everything has been installed correctly, a browser window should open up containing the collection of bisection cones all visualised at once.
+2) Execute from the Jupyter notebook: Initial cells contain a few of the main objects that you can play around with/ visualise. Write the vertices of your $P$ to the `vertices.txt` file by finding and executing the cell containing the open command above. Then execute the cell with `script("bis_cone2.pl")` to see the visualisation within the notebook itself.
+
