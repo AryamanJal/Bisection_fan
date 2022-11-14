@@ -7,7 +7,7 @@ open(INPUT, "<", "/home/aryaman/bisection_fan_2022/vertices.txt");
 my $B = new Matrix<Rational>(<INPUT>);
 close(INPUT);
 
-my $p = project_full(new Polytope(POINTS=>$B));
+my $p = new Polytope(POINTS=>$B);
 
 my $F1 = $p->FACETS;
 my $F2 = $F1->minor(All, ~[0]);
@@ -24,7 +24,6 @@ my @VT = [];
 my @p1 = [];
 my @C1 = [];
 my @H1 = [];
-my @z= [];
 
 my $M = $p->FACETS;    
    
@@ -169,6 +168,7 @@ foreach my $i (@s1){
     
 }
 
+
 # my @p1 = [];
 # for (my $i =0; $i <$F3->rows; $i ++){
 #     my $M1 = new Matrix($F3->row($i));
@@ -193,12 +193,17 @@ foreach my $i (@s1){
 # print($I[1][2]->AMBIENT_DIM, "\n", cross(3)->AMBIENT_DIM);
 # $pp= intersection(cross(3), $I[1][2]);
 
-compose(map{$_->VISUAL(VertexLabels=>'hidden')}@G);
+# compose(map{$_->VISUAL(VertexLabels=>'hidden')}@G);
 
-# tikz(compose(map{$_->VISUAL(VertexLabels=>'hidden')}@G), File=>"bisfan");
+
+print($I[1][2]->RAYS);
+
+# tikz(compose(map{$_->VISUAL(VertexLabels=>'hidden')}@G), File=>"bisfan"); uncomment for tikz code
 
 # compose($I[0][1]->VISUAL, $I[7][0]->VISUAL);
 # print scalar(@G);
+
+
 
 # sleep 2;
 # $checkedfan = fan::check_fan_objects(@G);
