@@ -1,3 +1,4 @@
+#functions to generate a bisection cone based on the pdf Inequalities_for_bisection_cone
 use application "polytope";
 use strict;
 use warnings;
@@ -39,25 +40,41 @@ sub dist {
     $z_one = new Matrix($z_one);
     my $r = common::solve_left($VT, $z_one);
     return $r;
-} 
+ 
 
 #function to build matrix A
 
-sub A{
-    my $F = shift;
-    my $G = shift;
-    my $V_F = $F->VERTICES;
-    $V_F = $V_F->minor(All, ~[0]);
-    my $V_G = $G->VERTICES;
-    $V_G = $V_G->minor(All, ~[0]);
-    $C_F = new Cone(RAYS=>$V_F);
-    my $A_F = $C_F->FACETS;
-    $C_G = new Cone(RAYS=>$V_G);
-    my $A_G = $C_G->FACETS;
-    my $A = new Matrix($A_F/$A_G/(dist($F)-dist($G))/(dist($G)-dist($F)));
-    return $A;
+    sub A{
+        my $F = shift;
+        my $G = shift;
+        my $V_F = $F->VERTICES;
+        $V_F = $V_F->minor(All, ~[0]);
+        my $V_G = $G->VERTICES;
+        $V_G = $V_G->minor(All, ~[0]);
+        my $C_F = new Cone(RAYS=>$V_F);
+        my $A_F = $C_F->FACETS;
+        my $C_G = new Cone(RAYS=>$V_G);
+        my $A_G = $C_G->FACETS;
+        print($VT, "\n");
+        my $A = new Matrix($A_F/$A_G/(dist($F)-dist($G))/(dist($G)-dist($F)));
+        return 1;
+    }
 }
 
+#making cone C
+
+# sub C{
+#     my $F = shift;
+#     my $G = shift;
+#     my $x = $A[$i]->rows;
+#         my $y = $A[$j]->rows;
+#         my $r = $x+$y +2;
+#         my $m1 = unit_matrix($r);
+#         my $m2 = dense($m1);    
+#         $P[$i][$j] = new Matrix($m2/$DT[$i][$j]/-$DT[$i][$j]);  
+    
+
+# }
 
 # for (my $i =0; $i <$n; $i ++){
 #     my $z_one = ones_vector($ff->cone($i)->N_RAYS);
@@ -94,7 +111,7 @@ sub A{
 #     }
 # }
 
-# #matrix of inequalities P for cone C
+#matrix of inequalities P for cone C
 
 # my @P = [];
 # for (my $i =0; $i <$n; $i ++){
