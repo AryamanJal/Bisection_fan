@@ -1,0 +1,142 @@
+\documentclass[11pt, amsfonts, reqno]{amsart}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\pagenumbering{gobble}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsthm}
+\theoremstyle{plain}
+\renewcommand{\qedsymbol}{}
+\renewcommand{\baselinestretch}{1}
+
+\makeatletter
+\renewcommand\@makefntext[1]{\leftskip=2em\hskip-2em\@makefnmark#1}
+\makeatother
+
+
+%-------Packages---------
+\usepackage{amssymb,amsfonts}
+\usepackage[all,arc]{xy}
+\usepackage{enumerate}
+\usepackage{bm}
+\usepackage{mathrsfs}
+%\usepackage[parfill]{parskip}  
+\usepackage{thmtools}
+\usepackage{thm-restate}
+\usepackage{datetime}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{cleveref}
+\usepackage{comment}
+\usepackage{romannum}
+\usepackage{faktor}
+\usepackage{commath}
+\usepackage{relsize}
+\usepackage[dvipsnames]{xcolor}
+
+\setlength{\textwidth}{\paperwidth}
+\addtolength{\textwidth}{-2.25in}
+\calclayout
+
+\setlength{\parskip}{\baselineskip}%
+
+%allow for footnotes without numbers using \blfootnote{}
+\newcommand\blfootnote[1]{%
+  \begingroup
+  \renewcommand\thefootnote{}\footnote{#1}%
+  \addtocounter{footnote}{-1}%
+  \endgroup
+}
+
+%--------Theorem Environments--------
+%theoremstyle{plain} --- default
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{cor}[thm]{Corollary}
+\newtheorem{prop}[thm]{Proposition}
+\newtheorem{lem}[thm]{Lemma}
+\newtheorem{conj}[thm]{Conjecture}
+
+
+\theoremstyle{definition}
+\newtheorem{defn}[thm]{Definition}
+\newtheorem{defns}[thm]{Definitions}
+\newtheorem{con}[thm]{Construction}
+\newtheorem{exmp}[thm]{Example}
+\newtheorem{ques}[thm]{Question}
+\newtheorem{answ}[thm]{Answer}
+\newtheorem{exmps}[thm]{Examples}
+\newtheorem{notn}[thm]{Notation}
+\newtheorem{notns}[thm]{Notations}
+\newtheorem{addm}[thm]{Addendum}
+\newtheorem{claim}{Claim}
+\newtheorem{fact}[thm]{Fact}
+\newtheorem{exer}[thm]{Exercise}
+\newtheorem{innercustomthm}{Theorem}
+\newenvironment{customthm}[1]
+  {\renewcommand\theinnercustomthm{#1}\innercustomthm}
+  {\endinnercustomthm}
+
+\theoremstyle{remark}
+\newtheorem{rem}[thm]{Remark}
+\newtheorem{obs}[thm]{Observation}
+\newtheorem{rems}[thm]{Remarks}
+\newtheorem{warn}[thm]{Warning}
+\newtheorem{sch}[thm]{Scholium}
+
+
+%%  Shortcuts
+\newcommand\inner[2]{\langle {#1},{#2}\rangle}
+\newcommand{\cut} { \backslash}
+\newcommand\transp[1]{{#1}^{\intercal}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\bis}{\text{bis}}
+\newcommand{\conv}{\text{conv}}
+\newcommand{\dist}{\text{dist}}
+\newcommand{\diamd}{\mathlarger{\mathlarger{\mathlarger{\mathlarger{\diamond}}}}}
+\newcommand{\AT}{\text{AT}}
+
+\newcommand{\ip}[2]{\langle #1, #2 \rangle}
+\DeclareMathOperator{\lcm}{lcm}
+\DeclareMathOperator{\den}{den}
+
+\title{Bisection fan}
+\date{}
+
+\AtBeginDocument{\pagenumbering{arabic}}
+\begin{document}
+
+\section{Inequalities of cones of bisection fans}
+
+Let $F, G$ be two facet cones of a polytope $P \subset \mathbb{R}^{d}$ given by $F = \{x \in \mathbb{R}^{d}: A_{1}x \leq 0\}$ and $G = \{x \in \mathbb{R}^{d}: A_{2}x \leq 0\}$, where $A_{1} \in \mathbb{R}^{m_{1} \times d}$ and $A_{2} \in \mathbb{R}^{m_{2} \times d}.$
+
+We know that each $\bis_{F, G}(0, a)$ is a polyhedron and that $\dist(x, \cdot)$ restricted to each facet cone is a linear function in $x$. Let $z_{1}^{\top}, z_{2}^{\top}$ be the linear functionals corresponding to the distance function restricted to $F$ and $G$ respectively. The H-description of $\bis_{F, G}(0, a)$ can be computed as below:
+\begin{align*}
+\bis_{F, G}(0, a) &= \bis(0, a) \cap F \cap (G+a) \\&= \{x \in \mathbb{R}^{d}: A_{1}x \leq 0, A_{2}(x-a) \leq 0, \dist(x, 0) = \dist(x, a)\} \\&= \{x \in \mathbb{R}^{d}: A_{1}x \leq 0, A_{2}x \leq A_{2}a, z_{1}^{\top}x = z_{2}^{\top}(x-a)\} \\& = \{x \in \mathbb{R}^{d}: A_{1}x \leq 0, A_{2}x \leq A_{2}a, (z_{1}-z_{2})^{\top}x \leq  -z_{2}^{\top}a, (z_{2}-z_{1})^{\top}x \leq  z_{2}^{\top}a\} \\&= \{x \in \mathbb{R}^{d}: Ax \leq z_{a}\}
+\end{align*}
+where $A = \begin{pmatrix}A_{1} \\ A_{2} \\z_{1}^{\top}- z_{2}^{\top}\\ z_{2}^{\top}-z_{1}^{\top} \end{pmatrix}_{(m_{1}+m_{2}+2) \times d}$ and $z_{a} = \begin{pmatrix} 0 \\ A_{2}a \\ -z_{2}^{\top}a \\ z_{2}^{\top}a \end{pmatrix}_{(m_{1}+m_{2} +2) \times 1}.$
+
+We are interested in the set $\mathcal{B}_{F, G} = \{a \in \mathbb{R}^{d}: \bis_{F, G}(0, a) \neq \emptyset\}$. The fact that it is a convex cone follows from $\bis_{F, G}(0, a)$ being a polyhedron. 
+
+Next, we will show that it is also a polyhedral cone and determine its inequalities:
+\begin{align*}
+    \mathcal{B}_{F, G} &= \{a \in \mathbb{R}^{d}: \bis_{F, G}(0, a) \neq \emptyset\} \\&= \{a \in \mathbb{R}^{d}: \, \exists \, x \in \mathbb{R}^{d}, Ax \leq z_{a}\} \\& = \{a \in \mathbb{R}^{d}: \forall \, c \, \in \mathbb{R}^{m_{1}+m_{2}+2} \, \, \text{satisfying} \, \, cA = 0 \, \text{and} \, c \geq 0, \inner{c}{z_{a}} \geq 0\}.
+\end{align*}
+The last equality holds from the Farkas lemma \cite{Ziegler} and allows us to further compute the inequalities of $\mathcal{B}_{F, G}$ explicitly. Let us set $C = \{c \in \mathbb{R}^{m_{1}+m_{2}+2}: Xc \geq 0\}$ where $X = \begin{pmatrix}I_{m_{1}+m_{2} +2} \\ A^{\top} \\-A^{\top} \end{pmatrix}$
+
+Now write $c \in C$ as $c = (c_{1}, c_{2}, c_{3}, c_{4})$ where $c_{1} \in \mathbb{R}^{1 \times m_{1}}, c_{2} \in \mathbb{R}^{1 \times m_{2}}$ and $c_{3}, c_{4} \in \mathbb{R}.$ Then the above condition can be simplified as:
+\begin{align*}
+\mathcal{B}_{F, G} &= \{a \in \mathbb{R}^{d}: \forall \, c \, \in C, \inner{c}{z_{a}}\geq 0 \} \\&= \left \{a \in \mathbb{R}^{d}: \forall \, (c_{1}, c_{2}, c_{3}, c_{4}) \, \in C, (c_{1}, c_{2}, c_{3}, c_{4})\begin{pmatrix} 0 \\ A_{2}a \\ -z_{2}^{\top}a \\ z_{2}^{\top}a 
+\end{pmatrix} \geq 0\right\}
+\end{align*}
+By the convexity of $C$, it suffices that the inequality be verified by the rays of $C$ only.
+\begin{align*}
+\mathcal{B}_{F, G} &= \{a \in \mathbb{R}^{d}: \forall \, c \in \text{rays}(C),  \inner{c_{2}}{A_{2}a} -c_{3}z_{2}^{\top}a + c_{4}z_{2}^{\top}a \geq 0, \} \\&= \{a \in \mathbb{R}^{d}: \forall \, c \in \text{rays}(C), \inner{A_{2}^{\top}c - c_{3}z_{2}+c_{4}z_{2}}{a} \geq 0\} \\&= \{a \in \mathbb{R}^{d}: Y^{C}a \geq 0\} 
+\end{align*}
+
+where $Y^{C} = \begin{pmatrix} \mbox{---} \,  A_{2}^{\top}c^{i} - c_{3}^{i}z_{2}+c_{4}^{i}z_{2} \, \mbox{---}  \end{pmatrix}_{n \times d}$ and $c^{i}, i=1, \ldots, n$ are the rays of $C.$
+
+This implies that each $\mathcal{A}_{F, G}$ is a polyhedral cone and hence it is of interest to ask if $\mathcal{B} = \{\mathcal{A}_{F, G}: F, G\, \, \text{are facet cones of P}\}$ is a polyhedral fan.
+
+\bibliography{bisbib}
+\bibliographystyle{ieeetr}
+\end{document}
