@@ -193,10 +193,10 @@ foreach my $i (@s1){
 # print($I[1][2]->AMBIENT_DIM, "\n", cross(3)->AMBIENT_DIM);
 # $pp= intersection(cross(3), $I[1][2]);
 
-# compose(map{$_->VISUAL(VertexLabels=>'hidden')}@G);
+compose(map{$_->VISUAL(VertexLabels=>'hidden')}@G);
 
 
-print($I[1][2]->RAYS);
+# print($I[1][2]->RAYS);
 
 # tikz(compose(map{$_->VISUAL(VertexLabels=>'hidden')}@G), File=>"bisfan"); uncomment for tikz code
 

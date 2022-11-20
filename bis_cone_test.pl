@@ -125,3 +125,5 @@ sub B
     my $B = new Cone(INEQUALITIES=>$M); 
     # if we want to intersect B_{F, G} with the polytope p we need to increase the CONE_AMBIENT_DIM by 1 to match the corresponding value for the polytope. do so by adding zero_vector($M->rows)| after the => sign above.
 }
+
+1; #ending file like this so we can include it elsewhere using the require keyword

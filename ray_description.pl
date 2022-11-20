@@ -20,7 +20,7 @@ sub b{
     my @w = [];
 
     foreach my $i (@s1){
-        foreach my $j (@s1){
+        foreach my $j (@s2){
             $v[$i] = $V_f->row($i);
             $u[$j] = $V_g->row($j);
             $w[$i][$j] = $v[$i] - $u[$j]; 
@@ -29,7 +29,7 @@ sub b{
     }
     my $r = new Matrix($w[0][0]);
     foreach my $i (@s1){
-        foreach my $j (@s1){
+        foreach my $j (@s2){
             $r = $r/$w[$i][$j];                    
         }
     }
@@ -42,3 +42,5 @@ sub b{
     my $c = new Cone(INPUT_RAYS=>$r);
     return $c;
 }
+
+1; #ending file like this so we can include it elsewhere using the require keyword
