@@ -1,10 +1,10 @@
-#function that checks if B_{F, G} = cone(v- u: v in vert(F), u in vert(G)) for every pair of facets F, G.
+#function that checks if B_{F, G} = cone(v- u: v in vert(F), u in vert(G)) for every pair of facets F, G of given polytope P.
 
 use application "polytope";
 use strict;
 use warnings;
-require "/home/aryaman/bisection_fan_2022/bis_cone_test.pl"; #ensure that this files end with a 1;
-require "/home/aryaman/bisection_fan_2022/ray_description.pl"; #ensure that this files end with a 1;
+require "/Users/aryamanjal/Polymake_4.6/Bisection_fan/bis_cone_test.pl"; #ensure that this files end with a 1;
+require "/Users/aryamanjal/Polymake_4.6/Bisection_fan//ray_description.pl"; #ensure that this files end with a 1;
 
 sub check_eq{
     my $p = shift;
