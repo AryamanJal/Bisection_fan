@@ -1,0 +1,186 @@
+% polymake for aryamanjal
+% Mon Feb 20 14:30:16 2023
+% unnamed
+
+\begin{tikzpicture}[x  = {(0.9cm,-0.076cm)},
+                    y  = {(-0.06cm,0.95cm)},
+                    z  = {(-0.44cm,-0.29cm)},
+                    scale = 1,
+                    color = {lightgray}]
+
+
+  % DEF COORDINATES
+  \coordinate (v0_unnamed__1) at (1, -1, 0);
+  \coordinate (v1_unnamed__1) at (1, 1, 0);
+  \coordinate (v2_unnamed__1) at (-1, 1, 0);
+  \coordinate (v3_unnamed__1) at (-1, -1, 0);
+
+
+  % VERTEXCOLOR
+  \definecolor{vertexcolor_unnamed__1}{rgb}{ 1 0 0 }
+
+  % DEF VERTEXSTYLES
+  \tikzstyle{vertexstyle_unnamed__1} = [circle, scale=0.25pt, fill=vertexcolor_unnamed__1,]
+
+  % FACETCOLOR
+  \definecolor{facetcolor_unnamed__1}{rgb}{ 0.4666666667 0.9254901961 0.6196078431 }
+
+  % EDGECOLOR
+  \definecolor{edgecolor_unnamed__1}{rgb}{ 0 0 0 }
+  \tikzstyle{facetstyle_unnamed__1} = [fill=facetcolor_unnamed__1, fill opacity=0.5, draw=edgecolor_unnamed__1, line width=1 pt, line cap=round, line join=round]
+
+  % FACES and EDGES and POINTS in the right order
+  \draw[facetstyle_unnamed__1] (v1_unnamed__1) -- (v0_unnamed__1) -- (v3_unnamed__1) -- (v2_unnamed__1) -- (v1_unnamed__1) -- cycle;
+
+  % POINTS
+  \foreach \i in {3,2,0,1} {
+    \node at (v\i_unnamed__1) [vertexstyle_unnamed__1] {};
+  }
+
+
+  % DEF COORDINATES
+  \coordinate (v0_unnamed__2) at (1, 0, -1);
+  \coordinate (v1_unnamed__2) at (1, 0, 1);
+  \coordinate (v2_unnamed__2) at (-1, 0, 1);
+  \coordinate (v3_unnamed__2) at (-1, 0, -1);
+
+
+  % VERTEXCOLOR
+  \definecolor{vertexcolor_unnamed__2}{rgb}{ 1 0 0 }
+
+  % DEF VERTEXSTYLES
+  \tikzstyle{vertexstyle_unnamed__2} = [circle, scale=0.25pt, fill=vertexcolor_unnamed__2,]
+
+  % FACETCOLOR
+  \definecolor{facetcolor_unnamed__2}{rgb}{ 0.4666666667 0.9254901961 0.6196078431 }
+
+  % EDGECOLOR
+  \definecolor{edgecolor_unnamed__2}{rgb}{ 0 0 0 }
+  \tikzstyle{facetstyle_unnamed__2} = [fill=facetcolor_unnamed__2, fill opacity=0.5, draw=edgecolor_unnamed__2, line width=1 pt, line cap=round, line join=round]
+
+  % FACES and EDGES and POINTS in the right order
+  \draw[facetstyle_unnamed__2] (v1_unnamed__2) -- (v0_unnamed__2) -- (v3_unnamed__2) -- (v2_unnamed__2) -- (v1_unnamed__2) -- cycle;
+
+  % POINTS
+  \foreach \i in {2,1,3,0} {
+    \node at (v\i_unnamed__2) [vertexstyle_unnamed__2] {};
+  }
+
+
+  % DEF COORDINATES
+  \coordinate (v0_unnamed__3) at (0, 1, -1);
+  \coordinate (v1_unnamed__3) at (0, 1, 1);
+  \coordinate (v2_unnamed__3) at (0, -1, 1);
+  \coordinate (v3_unnamed__3) at (0, -1, -1);
+
+
+  % VERTEXCOLOR
+  \definecolor{vertexcolor_unnamed__3}{rgb}{ 1 0 0 }
+
+  % DEF VERTEXSTYLES
+  \tikzstyle{vertexstyle_unnamed__3} = [circle, scale=0.25pt, fill=vertexcolor_unnamed__3,]
+
+  % FACETCOLOR
+  \definecolor{facetcolor_unnamed__3}{rgb}{ 0.4666666667 0.9254901961 0.6196078431 }
+
+  % EDGECOLOR
+  \definecolor{edgecolor_unnamed__3}{rgb}{ 0 0 0 }
+  \tikzstyle{facetstyle_unnamed__3} = [fill=facetcolor_unnamed__3, fill opacity=0.5, draw=edgecolor_unnamed__3, line width=1 pt, line cap=round, line join=round]
+
+  % FACES and EDGES and POINTS in the right order
+  \draw[facetstyle_unnamed__3] (v1_unnamed__3) -- (v0_unnamed__3) -- (v3_unnamed__3) -- (v2_unnamed__3) -- (v1_unnamed__3) -- cycle;
+
+  % POINTS
+  \foreach \i in {2,1,3,0} {
+    \node at (v\i_unnamed__3) [vertexstyle_unnamed__3] {};
+  }
+
+
+  % DEF COORDINATES
+  \coordinate (v0_unnamed__4) at (0, 1, -1);
+  \coordinate (v1_unnamed__4) at (0, 1, 1);
+  \coordinate (v2_unnamed__4) at (0, -1, 1);
+  \coordinate (v3_unnamed__4) at (0, -1, -1);
+
+
+  % VERTEXCOLOR
+  \definecolor{vertexcolor_unnamed__4}{rgb}{ 1 0 0 }
+
+  % DEF VERTEXSTYLES
+  \tikzstyle{vertexstyle_unnamed__4} = [circle, scale=0.25pt, fill=vertexcolor_unnamed__4,]
+
+  % FACETCOLOR
+  \definecolor{facetcolor_unnamed__4}{rgb}{ 0.4666666667 0.9254901961 0.6196078431 }
+
+  % EDGECOLOR
+  \definecolor{edgecolor_unnamed__4}{rgb}{ 0 0 0 }
+  \tikzstyle{facetstyle_unnamed__4} = [fill=facetcolor_unnamed__4, fill opacity=0.5, draw=edgecolor_unnamed__4, line width=1 pt, line cap=round, line join=round]
+
+  % FACES and EDGES and POINTS in the right order
+  \draw[facetstyle_unnamed__4] (v1_unnamed__4) -- (v0_unnamed__4) -- (v3_unnamed__4) -- (v2_unnamed__4) -- (v1_unnamed__4) -- cycle;
+
+  % POINTS
+  \foreach \i in {2,1,3,0} {
+    \node at (v\i_unnamed__4) [vertexstyle_unnamed__4] {};
+  }
+
+
+  % DEF COORDINATES
+  \coordinate (v0_unnamed__5) at (1, -1, 0);
+  \coordinate (v1_unnamed__5) at (1, 1, 0);
+  \coordinate (v2_unnamed__5) at (-1, 1, 0);
+  \coordinate (v3_unnamed__5) at (-1, -1, 0);
+
+
+  % VERTEXCOLOR
+  \definecolor{vertexcolor_unnamed__5}{rgb}{ 1 0 0 }
+
+  % DEF VERTEXSTYLES
+  \tikzstyle{vertexstyle_unnamed__5} = [circle, scale=0.25pt, fill=vertexcolor_unnamed__5,]
+
+  % FACETCOLOR
+  \definecolor{facetcolor_unnamed__5}{rgb}{ 0.4666666667 0.9254901961 0.6196078431 }
+
+  % EDGECOLOR
+  \definecolor{edgecolor_unnamed__5}{rgb}{ 0 0 0 }
+  \tikzstyle{facetstyle_unnamed__5} = [fill=facetcolor_unnamed__5, fill opacity=0.5, draw=edgecolor_unnamed__5, line width=1 pt, line cap=round, line join=round]
+
+  % FACES and EDGES and POINTS in the right order
+  \draw[facetstyle_unnamed__5] (v1_unnamed__5) -- (v0_unnamed__5) -- (v3_unnamed__5) -- (v2_unnamed__5) -- (v1_unnamed__5) -- cycle;
+
+  % POINTS
+  \foreach \i in {3,2,0,1} {
+    \node at (v\i_unnamed__5) [vertexstyle_unnamed__5] {};
+  }
+
+
+  % DEF COORDINATES
+  \coordinate (v0_unnamed__6) at (1, 0, -1);
+  \coordinate (v1_unnamed__6) at (1, 0, 1);
+  \coordinate (v2_unnamed__6) at (-1, 0, 1);
+  \coordinate (v3_unnamed__6) at (-1, 0, -1);
+
+
+  % VERTEXCOLOR
+  \definecolor{vertexcolor_unnamed__6}{rgb}{ 1 0 0 }
+
+  % DEF VERTEXSTYLES
+  \tikzstyle{vertexstyle_unnamed__6} = [circle, scale=0.25pt, fill=vertexcolor_unnamed__6,]
+
+  % FACETCOLOR
+  \definecolor{facetcolor_unnamed__6}{rgb}{ 0.4666666667 0.9254901961 0.6196078431 }
+
+  % EDGECOLOR
+  \definecolor{edgecolor_unnamed__6}{rgb}{ 0 0 0 }
+  \tikzstyle{facetstyle_unnamed__6} = [fill=facetcolor_unnamed__6, fill opacity=0.5, draw=edgecolor_unnamed__6, line width=1 pt, line cap=round, line join=round]
+
+  % FACES and EDGES and POINTS in the right order
+  \draw[facetstyle_unnamed__6] (v1_unnamed__6) -- (v0_unnamed__6) -- (v3_unnamed__6) -- (v2_unnamed__6) -- (v1_unnamed__6) -- cycle;
+
+  % POINTS
+  \foreach \i in {2,1,3,0} {
+    \node at (v\i_unnamed__6) [vertexstyle_unnamed__6] {};
+  }
+
+
+\end{tikzpicture}

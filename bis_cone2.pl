@@ -36,11 +36,11 @@ for (my $i =0; $i <$n; $i ++){
     my $M2 = new Matrix(-$M->row($i));
     $M1 = $M1/$M2;
     $H1[$i] = new Polytope(INEQUALITIES=>$M1);
-    @p1[$i] = intersection($C1[$i], $H1[$i]);
-    @V[$i]= $p1[$i]->VERTICES;
+    $p1[$i] = intersection($C1[$i], $H1[$i]);
+    $V[$i]= $p1[$i]->VERTICES;
     $V[$i] = $V[$i]->minor(All, ~[0]);
-    @VT[$i]= transpose($V[$i]);
-    @z[$i] = solve_left($VT[$i], $z_one);
+    $VT[$i]= transpose($V[$i]);
+    $z[$i] = solve_left($VT[$i], $z_one);
     }
 
 my @D = []; 
@@ -158,7 +158,7 @@ foreach my $i (@s){
     
 # }
 
-my @G= ();
+my @G= [];
 my @s1 = (0..$n-1);
 foreach my $i (@s1){    
     foreach my $j (@s1){
@@ -193,7 +193,7 @@ foreach my $i (@s1){
 # print($I[1][2]->AMBIENT_DIM, "\n", cross(3)->AMBIENT_DIM);
 # $pp= intersection(cross(3), $I[1][2]);
 
-compose(map{$_->VISUAL(VertexLabels=>'hidden')}@G);
+compose(map($_->VISUAL(VertexLabels=>'hidden'),@L));
 
 
 # print($I[1][2]->RAYS);

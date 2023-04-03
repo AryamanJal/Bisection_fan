@@ -123,6 +123,7 @@ sub B
     my $G = shift; #facet 2
     my $M = new Matrix(M($F, $G));
     my $B = new Cone(INEQUALITIES=>$M); 
+    return $B;
 }
 
 

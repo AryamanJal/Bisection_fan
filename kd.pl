@@ -1,4 +1,4 @@
-#function that takes an integer and returns the symmetric edge polytope corresponding to K_d
+#function that takes an integer d and returns the symmetric edge polytope corresponding to K_d
 use application "polytope";
 sub k_d {
     my $n = shift;
@@ -19,5 +19,5 @@ sub k_d {
     $z_one = transpose($z_one);
     $M = $z_one|$M;
     my $p = new Polytope(VERTICES=>$M);
-    return $p;    
+    return $p; 
 }
