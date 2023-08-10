@@ -1,4 +1,4 @@
-#functions to generate a bisection cone based on the pdf Inequalities_for_bisection_cone
+#functions to generate a bisection cone based on the pdf Inequality_description_of_bisection_cones
 use application "polytope";
 use strict;
 use warnings;
@@ -125,6 +125,4 @@ sub B
     my $B = new Cone(INEQUALITIES=>$M); 
     return $B;
 }
-
-
 1; #ending file like this so we can include it elsewhere using the require keyword

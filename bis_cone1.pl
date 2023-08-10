@@ -2,7 +2,6 @@ use application "polytope";
 use strict;
 use warnings;
 
-
 open(INPUT, "<", "/home/aryaman/polymake_notebooks/vertices.txt");
 my $B = new Matrix<Rational>(<INPUT>);
 close(INPUT);

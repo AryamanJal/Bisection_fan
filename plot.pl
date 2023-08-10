@@ -3,14 +3,16 @@ use strict;
 use warnings;
 my $home = $ENV{HOME};
 #require "/Users/aryamanjal/Polymake_4.6/Bisection_fan/bis_cone.pl"; #ensure that that files end with a 1;
-require "$home/Polymake_4.9/polymake_projects/Bisection_fan/bis_cone.pl";
+require "./bis_cone.pl";
 
-#read the contents of the vertices.txt file and store it to matrix $B.
-open(INPUT, "<", "$home/Polymake_4.9/polymake_projects/Bisection_fan/vertices.txt");
+#read the contents of the vertices.txt file and store it to matrix $.
+open(INPUT, "<", "./vertices.txt");
 my $b = new Matrix<Rational>(<INPUT>);
 close(INPUT);
 
 my $p = new Polytope(POINTS=>$b);
+
+print($p->N_VERTICES);
 
 #function that returns intersection of \mathcal{B}_{F, G} and polytope P
 sub B1

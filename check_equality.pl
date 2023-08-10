@@ -3,8 +3,8 @@
 use application "polytope";
 use strict;
 use warnings;
-require "/Users/aryamanjal/Polymake_4.6/Bisection_fan/bis_cone_test.pl"; #ensure that this files end with a 1;
-require "/Users/aryamanjal/Polymake_4.6/Bisection_fan//ray_description.pl"; #ensure that this files end with a 1;
+require "./bis_cone.pl"; #ensure that this file ends with a 1;
+require "./ray_description.pl"; #ensure that this file ends with a 1;
 
 sub check_eq{
     my $p = shift;

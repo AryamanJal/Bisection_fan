@@ -2,12 +2,12 @@ use application "polytope";
 use strict;
 use warnings;
 my $home = $ENV{HOME};
-#require "/Users/aryamanjal/Polymake_4.6/Bisection_fan/bis_cone_test.pl"; #ensure that that files end with a 1;
-require "$home/Polymake_4.6/Bisection_fan/bis_cone.pl";
-require "$home/Polymake_4.6/Bisection_fan/plot.pl";
+#ensure that that following files end with a 1;
+require "./bis_cone.pl";
+require "./plot.pl";
 
 #read the contents of the vertices.txt file and store it to matrix $B.
-open(INPUT, "<", "$home/Polymake_4.6/Bisection_fan/vertices.txt");
+open(INPUT, "<", "./vertices.txt");
 my $b = new Matrix<Rational>(<INPUT>);
 close(INPUT);
 
