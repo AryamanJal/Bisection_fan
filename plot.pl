@@ -5,14 +5,12 @@ my $home = $ENV{HOME};
 #require "/Users/aryamanjal/Polymake_4.6/Bisection_fan/bis_cone.pl"; #ensure that that files end with a 1;
 require "./bis_cone.pl";
 
-#read the contents of the vertices.txt file and store it to matrix $.
+#read the contents of the vertices.txt file and store it to matrix $b.
 open(INPUT, "<", "./vertices.txt");
 my $b = new Matrix<Rational>(<INPUT>);
 close(INPUT);
 
 my $p = new Polytope(POINTS=>$b);
-
-print($p->N_VERTICES);
 
 #function that returns intersection of \mathcal{B}_{F, G} and polytope P
 sub B1
@@ -48,7 +46,6 @@ sub vis
 my @L = vis();
 #my @L1 = map($_->VISUAL(VertexLabels=>'hidden'),@L);
 #compose(@L1);
-#print("hello");
 # if($p->DIM == 2){
 #         foreach my $i (@s){
 #             foreach my $j (@s){
@@ -63,6 +60,7 @@ my @L = vis();
 #         }
 #     return @G;
 #     }
+
 compose(map($_->VISUAL(VertexLabels=>'hidden'),@L));
 
 1; #ending file like this so we can include it elsewhere using the require keyword

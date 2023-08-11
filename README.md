@@ -9,11 +9,13 @@ Clone the repository using `git clone git@github.com:AryamanJal/Bisection_fan.gi
 
 1) Executing from the terminal:  `cd` into `Bisection_fan` and open polymake with `polymake`. Choose your favourite $2$ or $3$-dimensional, centrally symmetric polytope $P$ and save it to some variable `$p`. For example `$p=cube(3);`. Then run
 ```
-script("./write_vertices.pl"); write_vert($p);
-
+script("./write_vertices.pl"); 
+write_vert($p);
 ```
 
-This writes the vertices of $P$ to `vertices.txt`. Now run `script("./plot.pl");`. If everything has been installed correctly, a browser window should open up where the collection of bisection cones of $P$ are visualised simultaneously. The bisection fan of the cube for example will look like the image below.
+This writes the vertices of $P$ to `vertices.txt`. Now run `script("./plot.pl");`. If everything has been installed correctly, a browser window should open up where the collection of all the bisection cones of $P$ are visualised simultaneously. The bisection fan of the cube for example will look like the image below.
+
+![bisfancube](cube.png)
 
 2) Execute from the Jupyter notebook: Instructions in the `Visualising bisection fans.ipynb` are self-explanatory.
 

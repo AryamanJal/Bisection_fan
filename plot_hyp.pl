@@ -14,6 +14,7 @@ close(INPUT);
 my $p = new Polytope(POINTS=>$b);
 
 #returns collection of hyperplanes passing through the origin and parallel to a facet
+#this is H_P in the paper
 
 sub opp_bis_cones{
     my $n = $p->N_FACETS; 
