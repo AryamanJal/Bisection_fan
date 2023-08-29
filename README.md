@@ -1,5 +1,5 @@
 # Visualising 2 and 3-dimensional bisection fans
-This repo contains a Jupyter notebook and executable polymake code (the .pl files) for visualising $2$ and $3$-dimensional bisection fans. 
+This repo contains a Jupyter notebook and executable polymake scripts for visualising $2$ and $3$-dimensional bisection fans and computing bisection cones. The corresponding paper is "Polyhedral combinatorics of bisectors" and is available here: https://arxiv.org/abs/2308.14372. 
 
 ### Installation
 Install polymake on your machine as detailed [here](https://polymake.org/doku.php/download/start). If you're using a Windows machine, the best way to install it is to do so on WSL2. Instructions are [here](https://docs.google.com/document/d/1pJm5Shye_7nwL4tEx695frccYMfbXHYSpKEHJ_HHEt0/edit). To run the Jupyter notebook containing polymake commands, add the polymake kernel to your Jupyter set-up as outlined [here](https://polymake.org/doku.php/user_guide/howto/jupyter).
