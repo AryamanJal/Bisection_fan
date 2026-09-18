@@ -1,0 +1,25 @@
+# This CITATION.cff file was generated with cffinit.
+# Visit https://bit.ly/cffinit to generate yours today!
+
+cff-version: 1.2.0
+title: Visualizations of bisection cones and fans
+message: >-
+  If you use this software, please cite it using the
+  metadata from this file.
+type: software
+authors:
+  - given-names: 'Aryaman '
+    family-names: Jal
+    email: aryaman.jal@rub.de
+    affiliation: Ruhr-Universität Bochum
+    orcid: 'https://orcid.org/0000-0001-8500-1640'
+repository-code: 'https://github.com/AryamanJal/Bisection_fan'
+url: 'https://github.com/AryamanJal/Bisection_fan'
+abstract: >-
+  Code to visualize bisection cones and fans in two and
+  three dimensions. 
+keywords:
+  - polymake
+  - polyhedral norm
+  - bisection fan
+license: MIT
